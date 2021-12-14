@@ -1,0 +1,484 @@
+/* Edit Surface */
+.surface-container {
+    background: #282c34;
+    min-height: 200px;
+    border-radius: 2px;
+  }
+  
+  .surface {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    padding-bottom: 10px;
+  }
+  
+  .surface #input,
+  .surface #output {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    color: #aab1be;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 2.5;
+  }
+  
+  .surface #input {
+    opacity: 0.5;
+    position: relative;
+  }
+  
+  .surface #input:focus {
+    outline: none;
+  }
+  
+  /* Tags in Surface */
+  span.tag {
+    position: relative;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    color: #aab1be;
+  }
+  
+  span.tag::after {
+    font-size: 11px;
+    text-transform: uppercase;
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* border-bottom: 2px solid #fff; */
+    color: #4e535c;
+    border-color: #282c34;
+  }
+  
+  /* Numbers are green */
+  span.MONEY {
+    color: #00af89;
+  }
+  span.MONEY::after {
+    content: "money";
+    color: #00af89;
+    border-color: #00af89;
+  }
+  
+  span.ORDINAL {
+    color: #00af89;
+  }
+  span.ORDINAL::after {
+    content: "ordinal";
+    color: #00af89;
+    border-color: #00af89;
+  }
+  
+  span.CARDINAL {
+    color: #00af89;
+  }
+  span.CARDINAL::after {
+    content: "cardinal";
+    color: #00af89;
+    border-color: #00af89;
+  }
+  
+  span.PERCENT {
+    color: #00af89;
+  }
+  span.PERCENT::after {
+    content: "percent";
+    color: #00af89;
+    border-color: #00af89;
+  }
+  
+  /* Time is purple */
+  span.DATE {
+    color: #5c2a9d;
+  }
+  span.DATE::after {
+    content: "date";
+    color: #5c2a9d;
+    border-color: #5c2a9d;
+  }
+  
+  span.TIME {
+    color: #5c2a9d;
+  }
+  span.TIME::after {
+    content: "time";
+    color: #5c2a9d;
+    border-color: #5c2a9d;
+  }
+  
+  span.DURATION {
+    color: #5c2a9d;
+  }
+  span.DURATION::after {
+    content: "duration";
+    color: #5c2a9d;
+    border-color: #5c2a9d;
+  }
+  
+  /* URLs are blue */
+  span.URL {
+    color: #36c;
+  }
+  span.URL::after {
+    content: "URL";
+    color: #36c;
+    border-color: #36c;
+  }
+  
+  span.MENTION {
+    color: #36c;
+  }
+  span.MENTION::after {
+    content: "mention";
+    color: #36c;
+    border-color: #36c;
+  }
+  
+  span.HASHTAG {
+    color: #36c;
+  }
+  span.HASHTAG::after {
+    content: "hashtag";
+    color: #36c;
+    border-color: #36c;
+  }
+  
+  span.EMAIL {
+    color: #36c;
+  }
+  span.EMAIL::after {
+    content: "email";
+    color: #36c;
+    border-color: #36c;
+  }
+  
+  /* Emojis are yellow */
+  span.EMOJI {
+    color: #fc3;
+  }
+  span.EMOJI::after {
+    content: "emoji";
+    color: #fc3;
+    border-color: #fc3;
+  }
+  
+  span.EMOTICON {
+    color: #fc3;
+  }
+  span.EMOTICON::after {
+    content: "emoticon";
+    color: #fc3;
+    border-color: #fc3;
+  }
+  
+  span.ADJ::after {
+    content: "adj";
+  }
+  span.ADP::after {
+    content: "adp";
+  }
+  span.ADV::after {
+    content: "adv";
+  }
+  span.AUX::after {
+    content: "aux";
+  }
+  span.CCONJ::after {
+    content: "cconj";
+  }
+  span.DET::after {
+    content: "det";
+  }
+  span.INTJ::after {
+    content: "intj";
+  }
+  span.NOUN::after {
+    content: "noun";
+  }
+  span.NUM::after {
+    content: "num";
+  }
+  span.PART::after {
+    content: "part";
+  }
+  span.PRON::after {
+    content: "pron";
+  }
+  span.PROPN::after {
+    content: "propn";
+  }
+  span.PUNCT::after {
+    content: "punct";
+  }
+  span.SPACE::after {
+    content: "space";
+  }
+  span.SYM::after {
+    content: "sym";
+  }
+  span.VERB::after {
+    content: "verb";
+  }
+  span.X::after {
+    content: "x";
+  }
+  span.SCONJ::after {
+    content: "sconj";
+  }
+  
+  /* Other Information */
+  section {
+    margin-bottom: 30px;
+  }
+  
+  .sentence-emoji {
+    font-size: 1rem;
+  }
+  #sentiment-table{
+    border-collapse: collapse;
+  }
+  #sentiment-table tr {
+    border-bottom: 1 px solid black;
+    border-top: 1px solid black;
+  }
+  #word-freq{
+    border-collapse: collapse;
+  }
+  #word-freq tr {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+  }
+  
+  .sentence-text {
+    width: 100%;
+  }
+  .doc-stats {
+    display: inline;
+  }
+  .doc-stats > div {
+    display: inline-block;
+  
+  }
+  
+  .doc-stats > div > div {
+    background: #eaecf0;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin-left: -10px;
+  }
+  
+  .doc-stats span {
+    display: inline;
+    font-size: 30px;
+  }
+  
+  .entities {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .entities li {
+    display: inline-block;
+    font-family: monospace;
+    background: gray;
+    color: white;
+    border-radius: 2px;
+    padding: 1px;
+    padding-right: 8px;
+    margin: 4px;
+  }
+  
+  .entities li::before {
+    content: "tag";
+    color: gray;
+    background: white;
+    border-radius: 1px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    margin-right: 8px;
+  }
+  
+  /* Numbers are green */
+  .entities li.MONEY {
+    background-color: #00af89;
+  }
+  .entities li.MONEY::before {
+    content: "money";
+    color: #00af89;
+  }
+  
+  .entities li.ORDINAL {
+    background-color: #00af89;
+  }
+  .entities li.ORDINAL::before {
+    content: "ordinal";
+    color: #00af89;
+  }
+  
+  .entities li.CARDINAL {
+    background-color: #00af89;
+  }
+  .entities li.CARDINAL::before {
+    content: "cardinal";
+    color: #00af89;
+  }
+  
+  .entities li.PERCENT {
+    background-color: #00af89;
+  }
+  .entities li.PERCENT::before {
+    content: "percent";
+    color: #00af89;
+  }
+  
+  /* Time is purple */
+  .entities li.DURATION {
+    background-color: #5c2a9d;
+  }
+  .entities li.DURATION::before {
+    content: "duration";
+    color: #5c2a9d;
+  }
+  
+  .entities li.TIME {
+    background-color: #5c2a9d;
+  }
+  .entities li.TIME::before {
+    content: "time";
+    color: #5c2a9d;
+  }
+  
+  .entities li.DATE {
+    background-color: #5c2a9d;
+  }
+  .entities li.DATE::before {
+    content: "date";
+    color: #5c2a9d;
+  }
+  
+  /* URLs are blue */
+  .entities li.URL {
+    background-color: #36c;
+  }
+  .entities li.URL::before {
+    content: "url";
+    color: #36c;
+  }
+  
+  .entities li.MENTION {
+    background-color: #36c;
+  }
+  .entities li.MENTION::before {
+    content: "mention";
+    color: #36c;
+  }
+  
+  .entities li.HASHTAG {
+    background-color: #36c;
+  }
+  .entities li.HASHTAG::before {
+    content: "hashtag";
+    color: #36c;
+  }
+  
+  .entities li.EMAIL {
+    background-color: #36c;
+  }
+  .entities li.EMAIL::before {
+    content: "email";
+    color: #36c;
+  }
+  
+  /* Emojis are yellow */
+  .entities li.EMOJI {
+    background-color: #fc3;
+  }
+  .entities li.EMOJI::before {
+    content: "emoji";
+    color: #fc3;
+  }
+  
+  .entities li.EMOTICON {
+    background-color: #fc3;
+  }
+  .entities li.EMOTICON::before {
+    content: "emoticon";
+    color: #fc3;
+  }
+  
+  .entities li.location {
+    background-color: #d33;
+  }
+  .entities li.location::before {
+    content: "location";
+    color: #d33;
+  }
+
+  .sa-legend {
+    width: 100%;
+    height: 40px;
+    border-radius: 2px;
+    background-image: linear-gradient(
+      to right,
+      #1e276b,
+      #1e276b,
+      #323a80,
+      #495193,
+      #6e76af,
+      #c8ccd1,
+      #89415e,
+      #a55e7b,
+      #d0809d,
+      #e09bb4,
+      #eebacd
+    );
+  }
+  .sa-legend-score {
+    transition: left 1s ease;
+    background: #fff;
+    display: inline-block;
+    margin-top: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    text-align: center;
+    font-family: "Ultra", serif;
+    color: #777;
+    line-height: 30px;
+    position: absolute;
+    left: 50%;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+  }
+  
+ 
+  
+  th, td {
+    padding: 20px;
+    align-items:flex-start;
+    text-align: left;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+
+  .one {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }

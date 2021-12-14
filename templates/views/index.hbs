@@ -1,0 +1,106 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/sentiments.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+
+      <div class="">
+        <h4 id="section-header">
+          <i>😊</i>
+          Your Own Sentiment Analyser
+        </h4>
+        <div class="surface-container">
+          <div class="container">
+            <div class="surface">
+              <div id="output"></div>
+              <div
+                id="input"
+                contenteditable=""
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+              > Paste your sentiments here.</div>
+            </div>
+          </div>
+        </div>
+        <div class="sa-legend">
+          <span class="sa-legend-score">0.0</span>
+        </div>
+      </div>
+
+      <br /><br />
+      
+        <div class="wrapper">
+          <div>
+            <div class="one">
+                <h2>Document Statistics</h2>
+              <dl class="dl-horizontal doc-stats">
+                <div class="col-md-3">
+                  <div>
+                    <span id="sentences-stat">0</span>
+                    Sentences
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div>
+                    <span id="words-stat">0</span>
+                    Words
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div>
+                    <span id="tokens-stat">0</span>
+                    Tokens
+                  </div>
+                </div>
+              </dl>
+            </div>
+              
+            
+            <br />
+            <h2>Sentences & Sentiments</h2>
+            <table class="table table-hover">
+              <tr>
+                <td></td>
+                <th>Sentence</th>
+                <th>Score</th>
+              </tr>
+              <tbody id="sentiment-table">
+                <tr>
+                  <td>😊</td>
+                  <td class="sentence-text"></td>
+                  <td>0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <div class="col-md-4">
+            <section>
+              <h2>Entities</h2>
+              <ul class="entities" id="entities"></ul>
+            </section>
+            <section>
+              <h2>Word frequency</h2>
+              <table class="table">
+                <tr>
+                  <th>Word</th>
+                  <th>Frequency</th>
+                </tr>
+                <tbody id="word-freq"></tbody>
+              </table>
+            </section>
+          </div>
+        </div>
+      
+    </main>
+
+  </body>
+  <script src="js/sentiments.js"></script>
+</html>
